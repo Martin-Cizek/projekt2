@@ -78,9 +78,9 @@ def ReadGameStats(NAtt):
             for row in reslt_reader:
                 GameStats['N_games'] += 1
                 if int(row[1]) > NAtt:
-                    GameStats['N_worse_or_equal'] += 1
+                    GameStats['N_worse'] += 1
     except:
-        GameStats['N_worse_or_equal'] = 0
+        GameStats['N_worse'] = 0
         GameStats['N_games'] = 0    
     return GameStats 
 
