@@ -70,7 +70,7 @@ def SaveGameResults(rnd_num_str, NAtt):
 
 def ReadGameStats(NAtt):
     GameStats=dict()
-    GameStats['N_worse_or_equal'] = 0
+    GameStats['N_worse'] = 0
     GameStats['N_games'] = 0
     try:
         with open('game_stats.csv', 'r', newline='') as csvfile:
@@ -128,7 +128,7 @@ def main():
                GameStats = ReadGameStats(NumAttempts)
                if GameStats['N_games']>0:
                    print("This was better than "
-                         f"{GameStats['N_worse_or_equal']} of {GameStats['N_games']} "
+                         f"{GameStats['N_worse']} of {GameStats['N_games']} "
                          "previous games")
                SaveGameResults(RndNumStr, NumAttempts)
     print("Goodbye!")
